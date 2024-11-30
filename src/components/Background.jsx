@@ -53,9 +53,9 @@ const Background = () => {
         <div className="flex flex-col px-6">
           <div className='flex flex-col lg:flex-row gap-y-2 gap-x-6 justify-center items-center lg:items-start mb-12'>
             <img src={Bangkit} alt="Bangkit.webp" className='w-72'/>
-            <div className='flex flex-row lg:flex-col gap-2 md:gap-0 lg:mt-1'>
-              <p className="text-sm md:text-xl font-bold text-black">2024 Batch 2</p>
-              <p className='text-sm md:text-xl text-black'>Product Track Capstone Project</p>
+            <div className='flex flex-row lg:flex-col gap-2 lg:gap-0 lg:mt-1'>
+              <p className="text-sm md:text-lg lg:text-xl font-bold text-black">2024 Batch 2</p>
+              <p className='text-sm md:text-lg lg:text-xl text-black'>Product Track Capstone Project</p>
             </div>
           </div>
 
