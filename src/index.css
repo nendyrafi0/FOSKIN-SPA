@@ -16,14 +16,14 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  src: url('/fonts/Inter_18pt-Semibold.ttf') format('truetype');
+  src: url('./assets/fonts/Inter_18pt-Semibold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 100;
-  src: url('/fonts/Inter_18pt-Thin.ttf') format('truetype');
+  src: url('./assets/fonts/Inter_18pt-Thin.ttf') format('truetype');
 }
 
 ::selection {
