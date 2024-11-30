@@ -26,13 +26,23 @@
   src: url('/fonts/Inter_18pt-Thin.ttf') format('truetype');
 }
 
+::selection {
+  background: #1a1c1e; 
+  color: #edf1f3;     
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Background Image for Hero Image on the left side */
 .Hero {
-  background-image: url('assets/img/hero-image.jpg');
+  background-image: url('assets/img/hero-image.png');
   background-size: cover; 
   background-position: center;
 }
+

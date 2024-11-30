@@ -1,14 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import Logo from '../assets/img/foskin-logo.png'
 
-// Routing should be made
-// Color should be changed
 const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for Hamburger Menu
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const dropdownRef = useRef(null);
 
-    // Close dropdown when clicking outside of it
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
@@ -28,27 +25,24 @@ const Navbar = () => {
         <header>
             <nav className="max-w-7xl mx-auto py-4 pe-4 sm:pe-8 lg:pe-10">
                 <div className="flex justify-between gap-12 items-center h-16">
-                    {/* Logo */}
                     <div className="flex md:w-44 w-28 h-14 bg-black rounded-e-lg items-center justify-end px-6">
                         <a href="">
-                            <img src={Logo} alt="foskin-logo.png" className="w-10  object-contain"/>  
+                            <img src={Logo} alt="foskin-logo.png" className="w-10  object-contain" />
                         </a>
                     </div>
 
-                    {/* Desktop Menu */}
                     <div className="hidden md:flex justify-around w-full mx-4">
-                        <a href="#" className="text-base font-semibold text-gray-800 hover:text-blue-500">
+                        <a href="#Home" className="text-lg font-semibold text-black hover:text-gray-700">
                             Home
                         </a>
-                        <a href="#" className="text-base font-semibold text-gray-800 hover:text-blue-500">
+                        <a href="#Features" className="text-lg font-semibold text-black hover:text-gray-700">
                             Features
                         </a>
 
-                        {/* Dropdown Button */}
                         <div className="relative" ref={dropdownRef}>
                             <button
                                 onClick={() => setIsDropdownOpen((prev) => !prev)}
-                                className="text-base font-semibold text-gray-800 hover:text-blue-500 flex items-center"
+                                className="text-lg font-semibold text-black hover:text-gray-700 flex items-center"
                             >
                                 About
                                 <svg
@@ -71,20 +65,20 @@ const Navbar = () => {
                             {isDropdownOpen && (
                                 <div className="absolute bg-white border border-gray-200 rounded-lg shadow-md mt-2 w-32 z-20">
                                     <a
-                                        href="#"
-                                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-semibold"
+                                        href="#Background"
+                                        className="block px-4 py-2 text-black hover:bg-gray-200 font-semibold"
                                     >
                                         Background
                                     </a>
                                     <a
-                                        href="#"
-                                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-semibold"
+                                        href="#Contact"
+                                        className="block px-4 py-2 text-black hover:bg-gray-200 font-semibold"
                                     >
                                         Contact Us
                                     </a>
                                     <a
-                                        href="#"
-                                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-semibold"
+                                        href="#Contact"
+                                        className="block px-4 py-2 text-black hover:bg-gray-200 font-semibold"
                                     >
                                         Social Media
                                     </a>
@@ -93,11 +87,10 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Hamburger Menu Button */}
                     <button
                         type="button"
                         onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-                        className="md:hidden flex items-center justify-center text-gray-500 hover:text-gray-800 focus:outline-none"
+                        className="md:hidden flex items-center justify-center text-gray-500 hover:text-black focus:outline-none"
                     >
                         <svg
                             className="w-6 h-6"
@@ -116,36 +109,35 @@ const Navbar = () => {
                     </button>
                 </div>
 
-                {/* Mobile Menu */}
                 {isMobileMenuOpen && (
                     <div className="md:hidden mt-4">
                         <a
-                            href="#"
-                            className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                            href="#Home"
+                            className="block text-lg px-4 py-2 text-black hover:bg-gray-300 rounded-lg"
                         >
-                            Landing
+                            Home
                         </a>
                         <a
-                            href="#"
-                            className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                            href="#Features"
+                            className="block text-lg px-4 py-2 text-black hover:bg-gray-300 rounded-lg"
                         >
-                            Account
+                            Features
                         </a>
                         <a
-                            href="#"
-                            className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                            href="#Background"
+                            className="block text-lg px-4 py-2 text-black hover:bg-gray-300 rounded-lg"
                         >
                             Background
                         </a>
                         <a
-                            href="#"
-                            className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                            href="#Contact"
+                            className="block text-lg px-4 py-2 text-black hover:bg-gray-300 rounded-lg"
                         >
                             Contact Us
                         </a>
                         <a
-                            href="#"
-                            className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                            href="#Contact"
+                            className="block text-lg px-4 py-2 text-black hover:bg-gray-300 rounded-lg"
                         >
                             Social Media
                         </a>
