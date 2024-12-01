@@ -1,17 +1,31 @@
-# Stage 1: Build the React app
-FROM node:20.8.0-alpine as builder
-# Step 1: Build the application
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install
+steps:
+  # Step 1: Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '.'
+      - '-t'
+      - 'gcr.io/foskin-nendy/foskin-spa:$SHORT_SHA' # Change "react-project" to your project name
+      - '-f'
+      - 'Dockerfile'
 
-COPY . .
-RUN npm run build
+  # Step 2: Push the Docker image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/foskin-nendy/foskin-spa:$SHORT_SHA' # Change "react-project" to your project name
 
-# Step 2: Set up the production environment
-FROM nginx:stable-alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+  # Step 3: Deploy the Docker image to Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'foskin-spa' # Change "react-project" to your project name
+      - '--region=asia-southeast2' # Customize the region as needed
+      - '--platform=managed'
+      - '--allow-unauthenticated'
+      - '--image=gcr.io/foskin-nendy/foskin-spa:$SHORT_SHA' # Change "react-project" to your project name
+      - '--port=8080'
 
-EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+options:
+  logging: CLOUD_LOGGING_ONLY
