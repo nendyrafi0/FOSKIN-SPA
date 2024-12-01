@@ -20,11 +20,14 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'foskin-spa' # Change "react-project" to your project name
-      - '--region=global' # Customize the region as needed
-      - '--platform=managed'
-      - '--allow-unauthenticated'
-      - '--image=gcr.io/foskin-nendy/foskin-spa:$SHORT_SHA' # Change "react-project" to your project name
+      - 'foskin-spa'
+      - '--image'
+      - 'gcr.io/foskin-nendy/foskin-spa:$SHORT_SHA'# Change "react-project" to your project name
+      - '--region'
+      - 'global' # Customize the region as needed
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated' # Change "react-project" to your project name
       - '--port=8080'
 
 options:
