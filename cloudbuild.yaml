@@ -1,6 +1,6 @@
 # Cloud Build configuration file with serviceAccount and logging options
 
-serviceAccount: "serviceaccount@developer.gserviceaccount.com"
+serviceAccount: "902995077682-compute@developer.gserviceaccount.com"
 
 options:
   logging: CLOUD_LOGGING_ONLY
