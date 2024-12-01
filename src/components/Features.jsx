@@ -10,10 +10,10 @@ const Features = () => {
                     <h2 className="md:text-2xl text-xl font-bold mb-6 text-black">Explore Our Features</h2>
                     <video
                         className="w-full h-auto border border-opacity-15 border-black rounded-md"
-                    // autoPlay
-                    // muted
-                    // loop
-                    // playsInline
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
                     >
                         <source src={Video} type="video/mp4" />
                         Your browser does not support the video tag.

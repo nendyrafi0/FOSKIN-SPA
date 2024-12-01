@@ -30,11 +30,9 @@ function Home() {
 
       <div className='flex flex-col lg:flex-row items-center justify-center lg:justify-start lg:p-2'>
         <p className='text-xl font-semibold text-black'>Download The App Now!</p>
-        <a href='https://play.google.com'><img src={PlayStore} alt="Playstore-logo.png" className='w-52' /></a>
+        <a href='https://play.google.com' target="_blank" rel="noopener noreferrer"><img src={PlayStore} alt="Playstore-logo.png" className='w-52'/></a>
       </div>
     </div>
-
-
   );
 }
 

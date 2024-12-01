@@ -16,7 +16,7 @@ const Background = () => {
           <h2 className="md:text-2xl text-xl font-bold mb-6 text-black">The Inspiration Behind Our Innovation</h2>
           <div className='flex flex-col md:flex-row justify-center items-center gap-x-3 gap-y-8 mb-8'>
             <div className="flex flex-col bg-white border-2 drop-shadow-xl rounded-xl p-4 md:p-0">
-              <div className="md:h-80 h-50 overflow-y-auto p-4 md:p-5 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-thumb]:bg-grey-500 ">
+              <div className="md:h-80 h-50 overflow-y-auto p-4 md:p-5 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-thumb]:bg-gray-300 ">
                 <h3 className="text-md font-bold text-black ">
                   Addressing a Common Skin Health Concern
                 </h3>
@@ -27,7 +27,7 @@ const Background = () => {
             </div>
 
             <div className="flex flex-col bg-white border-2 drop-shadow-xl rounded-xl p-4 md:p-0">
-              <div className="md:h-80 h-50 overflow-y-auto p-4 md:p-5 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-grey-500 [&::-webkit-scrollbar-thumb]:bg-grey-500 ">
+              <div className="md:h-80 h-50 overflow-y-auto p-4 md:p-5 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-thumb]:bg-gray-300 ">
                 <h3 className="text-md font-bold text-black ">
                   Addressing Psychological Impact
                 </h3>
@@ -38,7 +38,7 @@ const Background = () => {
             </div>
 
             <div className="flex flex-col bg-white border-2 drop-shadow-xl rounded-xl p-4 md:p-0">
-              <div className="md:h-80 h-50 overflow-y-auto p-4 md:p-5 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-thumb]:bg-grey-500 ">
+              <div className="md:h-80 h-50 overflow-y-auto p-4 md:p-5 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-thumb]:bg-gray-300 ">
                 <h3 className="text-md font-bold text-black ">
                   Improve Dermatological Care With Technology
                 </h3>
