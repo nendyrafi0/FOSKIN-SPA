@@ -28,4 +28,4 @@ steps:
       - '--port=8080'
 
 options:
-  logging: CLOUD_LOGGING_ONLY
+  logging: gs://nendy-foskin-bucket
