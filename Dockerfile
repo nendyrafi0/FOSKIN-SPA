@@ -1,31 +1,20 @@
-steps:
-  # Step 1: Build the Docker image
-  - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'build'
-      - '.'
-      - '-t'
-      - 'gcr.io/foskin-nendy/foskin-spa:$SHORT_SHA' # Change "react-project" to your project name
-      - '-f'
-      - 'Dockerfile'
+# Use the official Node.js 20 Alpine image as the base image
+FROM node:20-alpine
 
-  # Step 2: Push the Docker image to Container Registry
-  - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'push'
-      - 'gcr.io/foskin-nendy/foskin-spa:$SHORT_SHA' # Change "react-project" to your project name
+# Set the working directory inside the container
+WORKDIR /app
 
-  # Step 3: Deploy the Docker image to Cloud Run
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args:
-      - 'run'
-      - 'deploy'
-      - 'foskin-spa' # Change "react-project" to your project name
-      - '--region=global' # Customize the region as needed
-      - '--platform=managed'
-      - '--allow-unauthenticated'
-      - '--image=gcr.io/foskin-nendy/foskin-spa:$SHORT_SHA' # Change "react-project" to your project name
-      - '--port=8080'
+# Copy package.json and package-lock.json (if available)
+COPY package*.json ./
 
-options:
-  logging: gs://nendy-foskin-bucket
+# Install dependencies
+RUN npm install --production
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the application port (change this if your app uses a different port)
+EXPOSE 8080
+
+# Command to run the application
+CMD ["node", "server.js"]  # Change 'server.js' to your main application file
