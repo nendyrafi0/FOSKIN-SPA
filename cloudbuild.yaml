@@ -1,4 +1,4 @@
-teps:
+steps:
   # Step 1: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args:
