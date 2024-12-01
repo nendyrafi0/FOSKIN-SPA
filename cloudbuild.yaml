@@ -4,6 +4,9 @@ serviceAccount: "902995077682-compute@developer.gserviceaccount.com"
 
 options:
   logging: CLOUD_LOGGING_ONLY
+  substitution_option: ALLOW_LOOSE
+  # Explicitly specify the region where Cloud Build should run
+  region: asia-southeast2
 
 steps:
   # Step 1: Build Docker image
