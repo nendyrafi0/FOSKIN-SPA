@@ -21,7 +21,7 @@ steps:
       - 'run'
       - 'deploy'
       - 'foskin-spa' # Change "react-project" to your project name
-      - '--region=asia-southeast1' # Customize the region as needed
+      - '--region=global' # Customize the region as needed
       - '--platform=managed'
       - '--allow-unauthenticated'
       - '--image=gcr.io/foskin-nendy/foskin-spa:$SHORT_SHA' # Change "react-project" to your project name
