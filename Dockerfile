@@ -1,20 +1,29 @@
-# Use the official Node.js 20 Alpine image as the base image
-FROM node:20-alpine
+# Stage 1: Build the application
+FROM node:18-alpine AS build
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
 # Copy package.json and package-lock.json (if available)
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
 # Install dependencies
-RUN npm install --production
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
 
-# Expose the application port (change this if your app uses a different port)
-EXPOSE 8080
+# Build the application for production
+RUN npm run build
 
-# Command to run the application
-CMD ["node", "server.js"]  # Change 'server.js' to your main application file
+# Stage 2: Serve the built application using a lightweight server
+FROM nginx:stable-alpine AS production
+
+# Copy built files from the previous stage
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start NGINX
+CMD ["nginx", "-g", "daemon off;"]
