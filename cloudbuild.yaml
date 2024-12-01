@@ -28,4 +28,4 @@ teps:
       - '--port=8080'
 
 options:
-  logging: gs://nendy-foskin-bucket
+  logging: CLOUD_LOGGING_ONLY
